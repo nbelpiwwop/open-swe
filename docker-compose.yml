@@ -6,6 +6,8 @@ services:
     build:
       context: .
       dockerfile: packages/shared/Dockerfile
+      args:
+        YARN_VERSION: "3.5.1"
     container_name: open-swe-shared
     volumes:
       - shared-dist:/app/packages/shared/dist
@@ -52,6 +54,7 @@ services:
 volumes:
   shared-dist:
     driver: local
+
 
 
 
