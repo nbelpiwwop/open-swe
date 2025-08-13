@@ -17,6 +17,8 @@ services:
     build:
       context: .
       dockerfile: apps/open-swe/Dockerfile
+      args:
+        YARN_VERSION: "3.5.1"
     container_name: open-swe-agent
     ports:
       - "2024:2024"
@@ -54,6 +56,7 @@ services:
 volumes:
   shared-dist:
     driver: local
+
 
 
 
