@@ -9,8 +9,6 @@ services:
     container_name: open-swe-shared
     volumes:
       - shared-dist:/app/packages/shared/dist
-    networks:
-      - open-swe-network
 
   # LangGraph agent service - core AI agent
   agent:
@@ -64,3 +62,4 @@ networks:
   open-swe-network:
     driver: bridge
     name: open-swe-network
+
