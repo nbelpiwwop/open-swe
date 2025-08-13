@@ -38,6 +38,8 @@ services:
     build:
       context: .
       dockerfile: apps/web/Dockerfile
+      args:
+        YARN_VERSION: "3.5.1"
     container_name: open-swe-web
     ports:
       - "7850:3000"
@@ -56,6 +58,7 @@ services:
 volumes:
   shared-dist:
     driver: local
+
 
 
 
