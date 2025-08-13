@@ -37,3 +37,4 @@ VOLUME ["/app/packages/shared/dist"]
 CMD ["echo", "Shared package built successfully"]
 
 
+
