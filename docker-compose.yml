@@ -25,10 +25,8 @@ services:
       - ./apps/open-swe/.env:/app/apps/open-swe/.env:ro
     environment:
       - PORT=2024
-      - OPEN_SWE_APP_URL=http://localhost:3000
+      - OPEN_SWE_APP_URL=http://localhost:7850
       - LANGGRAPH_API_URL=http://agent:2024
-    networks:
-      - open-swe-network
     restart: unless-stopped
 
   # Next.js web application - user interface
@@ -62,4 +60,5 @@ networks:
   open-swe-network:
     driver: bridge
     name: open-swe-network
+
 
