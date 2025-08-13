@@ -53,11 +53,8 @@ volumes:
   shared-dist:
     driver: local
 
-# Custom network for inter-service communication
-networks:
-  open-swe-network:
-    driver: bridge
-    name: open-swe-network
+
+
 
 
 
