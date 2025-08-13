@@ -1,6 +1,12 @@
 # Use Node.js 20 as the base image
 FROM node:20-alpine
 
+# Accept Yarn version as build argument
+ARG YARN_VERSION=3.5.1
+
+# Enable corepack and install the specified Yarn version
+RUN corepack enable && corepack prepare yarn@${YARN_VERSION} --activate
+
 # Set working directory
 WORKDIR /app
 
@@ -53,3 +59,4 @@ WORKDIR /app
 
 # Command to start the LangGraph development server
 CMD ["yarn", "workspace", "@open-swe/agent", "dev"]
+
