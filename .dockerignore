@@ -1,0 +1,152 @@
+# Dependencies
+node_modules
+**/node_modules
+.pnp
+.pnp.js
+.yarn/install-state.gz
+.yarn/cache
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Build artifacts
+/build
+/dist
+**/dist
+.turbo/
+.next/
+/out/
+
+# Environment files (will be mounted separately)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# Testing
+/coverage
+**/__tests__/**
+**/test/**
+*.test.js
+*.test.ts
+*.spec.js
+*.spec.ts
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+lib-cov
+
+# nyc test coverage
+.nyc_output
+
+# Dependency directories
+jspm_packages/
+
+# TypeScript cache
+*.tsbuildinfo
+next-env.d.ts
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary folders
+tmp/
+temp/
+
+# LangGraph API
+.langgraph_api
+
+# Documentation and README files (not needed in container)
+*.md
+!DOCKER.md
+LICENSE
+SECURITY.md
+
+# GitHub workflows and configuration
+.github/
+.codespellignore
+
+# Development configuration files
+.prettierrc
+.prettierignore
+prettier.config.js
+eslint.config.js
+jest.config.js
+vitest.config.ts
+ls.vitest.config.ts
+
+# Static assets (will be copied separately if needed)
+static/
+
+# Evaluation and benchmark data
+evals/
+langbench/
+
+# Scripts (will be copied separately if needed)
+scripts/
+
+# Claude settings
+**/.claude/
