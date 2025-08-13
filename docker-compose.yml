@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  # Shared package service - builds the shared utilities
+  shared:
+    build:
+      context: .
+      dockerfile: packages/shared/Dockerfile
+    container_name: open-swe-shared
+    volumes:
+      - shared-dist:/app/packages/shared/dist
+    networks:
+      - open-swe-network
+
+  # LangGraph agent service - core AI agent
+  agent:
+    build:
+      context: .
+      dockerfile: apps/open-swe/Dockerfile
+    container_name: open-swe-agent
+    ports:
+      - "2024:2024"
+    depends_on:
+      - shared
+    volumes:
+      - shared-dist:/app/packages/shared/dist:ro
+      - ./apps/open-swe/.env:/app/apps/open-swe/.env:ro
+    environment:
+      - PORT=2024
+      - OPEN_SWE_APP_URL=http://localhost:3000
+      - LANGGRAPH_API_URL=http://agent:2024
+    networks:
+      - open-swe-network
+    restart: unless-stopped
+
+  # Next.js web application - user interface
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    container_name: open-swe-web
+    ports:
+      - "3000:3000"
+    depends_on:
+      - shared
+      - agent
+    volumes:
+      - shared-dist:/app/packages/shared/dist:ro
+      - ./apps/web/.env:/app/apps/web/.env:ro
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:3000/api
+      - LANGGRAPH_API_URL=http://agent:2024
+    networks:
+      - open-swe-network
+    restart: unless-stopped
+
+# Named volumes for sharing built artifacts
+volumes:
+  shared-dist:
+    driver: local
+
+# Custom network for inter-service communication
+networks:
+  open-swe-network:
+    driver: bridge
+    name: open-swe-network
