@@ -3632,6 +3632,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@modelcontextprotocol/sdk@npm:^1.17.3":
+  version: 1.17.3
+  resolution: "@modelcontextprotocol/sdk@npm:1.17.3"
+  dependencies:
+    ajv: ^6.12.6
+    content-type: ^1.0.5
+    cors: ^2.8.5
+    cross-spawn: ^7.0.5
+    eventsource: ^3.0.2
+    eventsource-parser: ^3.0.0
+    express: ^5.0.1
+    express-rate-limit: ^7.5.0
+    pkce-challenge: ^5.0.0
+    raw-body: ^3.0.0
+    zod: ^3.23.8
+    zod-to-json-schema: ^3.24.1
+  checksum: fdd4af073b73940a65f6f8ed7dd22fa0bccc3cb432718f0a4504f52b4e1ec9a01003c47d19e2103e3022fb184e332460d28b524a0485260f70a5e7cbafee9d62
+  languageName: node
+  linkType: hard
+
 "@mswjs/interceptors@npm:^0.39.1":
   version: 0.39.3
   resolution: "@mswjs/interceptors@npm:0.39.3"
@@ -4192,6 +4212,7 @@ __metadata:
     "@langchain/core": ^0.3.65
     "@langchain/langgraph": ^0.3.8
     "@langchain/langgraph-sdk": ^0.0.95
+    "@modelcontextprotocol/sdk": ^1.17.3
     "@octokit/rest": ^22.0.0
     "@octokit/types": ^12.0.0
     "@tsconfig/recommended": ^1.0.8
