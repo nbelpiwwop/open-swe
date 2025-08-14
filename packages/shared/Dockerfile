@@ -4,6 +4,9 @@ FROM node:20-alpine
 # Set working directory
 WORKDIR /app
 
+# Enable Corepack to use the project's specified Yarn version
+RUN corepack enable
+
 # Copy workspace configuration files
 COPY package.json yarn.lock .yarnrc.yml ./
 
@@ -29,4 +32,5 @@ VOLUME ["/app/packages/shared/dist"]
 
 # Default command
 CMD ["echo", "Shared package built successfully"]
+
 
