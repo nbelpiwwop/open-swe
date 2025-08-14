@@ -16,7 +16,7 @@ COPY packages/shared/tsconfig.json ./packages/shared/
 COPY packages/shared/turbo.json ./packages/shared/
 
 # Install dependencies using Yarn
-RUN yarn install --immutable
+RUN yarn install 
 
 # Copy shared package source code
 COPY packages/shared/src ./packages/shared/src
