@@ -4,6 +4,9 @@ FROM node:20-alpine
 # Set working directory
 WORKDIR /app
 
+# Enable Corepack to use the correct Yarn version
+RUN corepack enable
+
 # Copy workspace configuration files
 COPY package.json yarn.lock .yarnrc.yml ./
 COPY turbo.json ./
@@ -53,3 +56,4 @@ WORKDIR /app
 
 # Command to start the LangGraph development server
 CMD ["yarn", "workspace", "@open-swe/agent", "dev"]
+
