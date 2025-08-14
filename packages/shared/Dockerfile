@@ -16,7 +16,7 @@ COPY packages/shared/tsconfig.json ./packages/shared/
 COPY packages/shared/turbo.json ./packages/shared/
 
 # Install dependencies using Yarn
-RUN yarn install --frozen-lockfile
+RUN yarn install --immutable
 
 # Copy shared package source code
 COPY packages/shared/src ./packages/shared/src
@@ -32,5 +32,6 @@ VOLUME ["/app/packages/shared/dist"]
 
 # Default command
 CMD ["echo", "Shared package built successfully"]
+
 
 
