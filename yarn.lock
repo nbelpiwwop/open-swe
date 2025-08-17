@@ -4188,7 +4188,7 @@ __metadata:
     prettier: ^3.5.2
     react: ^19.1.0
     tsx: ^4.20.3
-    typescript: ^5.8.3
+    typescript: ~5.7.2
     uuid: ^10.0.0
   languageName: unknown
   linkType: soft
@@ -19846,7 +19846,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5, typescript@npm:^5.8.3":
+"typescript@npm:^5":
   version: 5.8.3
   resolution: "typescript@npm:5.8.3"
   bin:
@@ -19866,7 +19866,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^5#~builtin<compat/typescript>, typescript@patch:typescript@^5.8.3#~builtin<compat/typescript>":
+"typescript@patch:typescript@^5#~builtin<compat/typescript>":
   version: 5.8.3
   resolution: "typescript@patch:typescript@npm%3A5.8.3#~builtin<compat/typescript>::version=5.8.3&hash=77c9e2"
   bin:
